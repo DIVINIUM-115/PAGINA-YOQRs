@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Personajes</title>
+
+<style>
+
+*{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: Arial;
+  background: url("img/fondo.png") repeat;
+  background-size:2000px 1500px;
+  animation:fondoScroll 60s linear infinite;
+  color:white;
+  opacity:0;
+  transition:.4s;
+}
+
+body.show{
+  opacity:1;
+}
+
+@keyframes fondoScroll{
+  from{background-position:0 0;}
+  to{background-position:0 -1200px;}
+}
+
+/* Header con imagen + texto */
+header{
+  padding:15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* espacio entre imagen y texto */
+}
+
+header img{
+  max-width:90px;
+  width:20%;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  user-drag: none;
+  /* Imagen estática, sin animación */
+}
+
+header h1{
+  font-size:28px;
+  font-weight:bold;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap:18px;
+  padding:25px;
+}
+
+.card{
+  background:rgba(255,255,255,0.15);
+  border-radius:16px;
+  padding:10px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  transition:.2s;
+  height:210px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.card:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 15px rgba(255,255,255,.5);
+}
+
+.imgBox{
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.name{
+  margin-top:6px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* BOTON VOLVER */
+.back{
+  display:inline-block;
+  margin:30px auto 40px;
+  padding:14px 26px;
+  background:rgba(255,255,255,.85);
+  border-radius:30px;
+  text-decoration:none;
+  color:black;
+  font-size:18px;
+  transition:.2s;
+}
+
+.back:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media(max-width:600px){
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap:12px;
+    padding:15px;
+  }
+
+  .card{
+    height:180px;
+  }
+
+  .name{
+    font-size:13px;
+  }
+
+  .back{
+    font-size:16px;
+    padding:12px 22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="img/objeto.png" alt="Personajes">
+  <h1>YO-KAI DISPONIBLES</h1>
+</header>
+
+<div class="grid">
+
+<a class="card link" href="giverno_enma.html">
+  <div class="imgBox"><img src="img/giverno_enma.png"></div>
+  <div class="name">Giverno Enma</div>
+</a>
+
+<a class="card link" href="armoreraza.html">
+  <div class="imgBox"><img src="img/armoreraza.png"></div>
+  <div class="name">Armoreraza</div>
+</a>
+
+<a class="card link" href="espectro_enma.html">
+  <div class="imgBox"><img src="img/espectro_enma.png"></div>
+  <div class="name">Espectro Enma</div>
+</a>
+
+<a class="card link" href="fenixtelecto.html">
+  <div class="imgBox"><img src="img/fenixtelecto.png"></div>
+  <div class="name">Fénixtelecto</div>
+</a>
+
+<a class="card link" href="miopatra.html">
+  <div class="imgBox"><img src="img/miopatra.png"></div>
+  <div class="name">Miopatra</div>
+</a>
+
+<a class="card link" href="mazado_calzada.html">
+  <div class="imgBox"><img src="img/mazado_calzada.png"></div>
+  <div class="name">Mazado de la Calzada</div>
+</a>
+
+<a class="card link" href="dradorado.html">
+  <div class="imgBox"><img src="img/dradorado.png"></div>
+  <div class="name">Dradorado</div>
+</a>
+
+<a class="card link" href="narciso_ii.html">
+  <div class="imgBox"><img src="img/narciso_ii.png"></div>
+  <div class="name">Narciso II</div>
+</a>
+
+<a class="card link" href="zappadoquia.html">
+  <div class="imgBox"><img src="img/zappadoquia.png"></div>
+  <div class="name">Zappadoquia</div>
+</a>
+
+<a class="card link" href="madame_moai.html">
+  <div class="imgBox"><img src="img/madame_moai.png"></div>
+  <div class="name">Madame Moái</div>
+</a>
+
+<a class="card link" href="piedra_rosseta.html">
+  <div class="imgBox"><img src="img/piedra_rosseta.png"></div>
+  <div class="name">Piedra Rosseta</div>
+</a>
+
+<a class="card link" href="gran_enma_iluminado.html">
+  <div class="imgBox"><img src="img/gran_enma_iluminado.png"></div>
+  <div class="name">Gran Enma Iluminado</div>
+</a>
+
+<a class="card link" href="jibanyan_t_aureo.html">
+  <div class="imgBox"><img src="img/jibanyan_t_aureo.png"></div>
+  <div class="name">Jibanyan T Áureo</div>
+</a>
+
+<a class="card link" href="enmanyan.html">
+  <div class="imgBox"><img src="img/enmanyan.png"></div>
+  <div class="name">Enmanyan</div>
+</a>
+
+<a class="card link" href="komasan_t_aureo.html">
+  <div class="imgBox"><img src="img/komasan_t_aureo.png"></div>
+  <div class="name">Komasan T Áureo</div>
+</a>
+
+<a class="card link" href="nyanses_ii_aureo.html">
+  <div class="imgBox"><img src="img/nyanses_ii_aureo.png"></div>
+  <div class="name">Nyansés II Áureo</div>
+</a>
+
+<a class="card link" href="adoleszombi_aureo.html">
+  <div class="imgBox"><img src="img/adoleszombi_aureo.png"></div>
+  <div class="name">Adoleszombi Áureo</div>
+</a>
+
+<a class="card link" href="indiana_jaws_aureo.html">
+  <div class="imgBox"><img src="img/indiana_jaws_aureo.png"></div>
+  <div class="name">Indiana Jaws Áureo</div>
+</a>
+
+<a class="card link" href="vulcavador_aureo.html">
+  <div class="imgBox"><img src="img/vulcavador_aureo.png"></div>
+  <div class="name">Vulcavador Áureo</div>
+</a>
+
+<a class="card link" href="shogunyan_cristalizado.html">
+  <div class="imgBox"><img src="img/shogunyan_cristalizado.png"></div>
+  <div class="name">Shogunyan Cristalizado</div>
+</a>
+
+<a class="card link" href="gran_acala.html">
+  <div class="imgBox"><img src="img/gran_acala.png"></div>
+  <div class="name">Gran Acala</div>
+</a>
+
+<a class="card link" href="enma_oscuro.html">
+  <div class="imgBox"><img src="img/enma_oscuro.png"></div>
+  <div class="name">Enma Oscuro</div>
+</a>
+
+</div>
+
+<center>
+  <a class="back link" href="saga_blasters2.html.html">⬅ Volver al inicio</a>
+</center>
+
+<script>
+window.onload = ()=>{
+  document.body.classList.add("show");
+};
+
+// Animación al cambiar de página
+document.querySelectorAll(".link").forEach(link=>{
+  link.addEventListener("click", e=>{
+    e.preventDefault();
+    const url = link.href;
+    document.body.classList.remove("show");
+    setTimeout(()=>{
+      window.location = url;
+    },250);
+  });
+});
+
+// Evitar clic derecho y arrastrar en todas las imágenes
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", e => e.preventDefault());
+  img.setAttribute("draggable","false");
+});
+</script>
+
+</body>
+</html>

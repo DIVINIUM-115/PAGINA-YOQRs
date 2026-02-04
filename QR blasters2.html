@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contraseñas - Yo-kai Watch Blasters 2</title>
+
+<style>
+
+*{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing:border-box;
+}
+
+html, body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#000 url("img/fondo.png") repeat;
+  background-size:2000px 1500px;
+  background-position:0 0;
+  animation:fondoScroll 60s linear infinite;
+  color:white;
+  text-align:center;
+  -webkit-text-size-adjust:100%;
+  opacity:0;
+  transition:.4s;
+}
+
+body.show{
+  opacity:1;
+}
+
+@keyframes fondoScroll{
+  from{ background-position:0 0; }
+  to{ background-position:0 -1200px; }
+}
+
+/* Header */
+header{
+  padding:28px 20px;
+  font-size:34px;
+  font-weight:bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+header .header-img{
+  width:100px;
+  height:100px;
+  object-fit: contain;
+  -webkit-user-drag: none; /* Evitar arrastrar imagen */
+  user-drag: none;
+}
+
+/* Grid */
+.passwords{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:18px;
+  max-width:1000px;
+  margin:30px auto;
+  padding:0 20px;
+}
+
+/* Card */
+.pass{
+  background:white;
+  color:black;
+  padding:24px 16px;
+  border-radius:18px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.label{
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:1.4px;
+  margin-bottom:16px;
+  opacity:.8;
+}
+
+/* Contraseña estilo Blasters 2 */
+.code{
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+/* Colores por letra */
+.red { color:red; }
+.blue { color:blue; }
+
+/* Hover */
+.pass:hover{
+  transform:scale(1.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Used */
+.pass.used{
+  background:#2b2b2b;
+  color:white;
+  transform:scale(.98);
+}
+
+/* Buttons */
+.actions{
+  margin:40px 0;
+}
+
+.actions a{
+  display:inline-block;
+  margin:12px;
+  padding:14px 26px;
+  background:rgba(255,255,255,.9);
+  border-radius:30px;
+  color:black;
+  font-size:18px;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.actions a:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+/* Mobile */
+@media(max-width:768px){
+  header{
+    font-size:26px;
+  }
+
+  .label{
+    font-size:14px;
+  }
+
+  .code{
+    font-size:28px;
+  }
+
+  .actions a{
+    font-size:16px;
+    padding:12px 22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="img/objeto.png" alt="Objeto" class="header-img">
+  P. DEL DEMONIO DE ACERO
+</header>
+
+<div class="passwords" id="passwords">
+
+  <!-- Contraseña 1 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 1</div>
+    <div class="code">
+      <span class="blue">I</span>
+      <span class="blue">KI</span>
+      <span class="blue">E</span>
+      <span class="blue">NI</span>
+      <span class="red">WO</span>
+      <span class="blue">ME</span>
+      <span class="red">WO</span>
+      <span class="blue">RA</span>
+      <span class="red">A</span>
+      <span class="red">KO</span>
+    </div>
+  </div>
+
+  <!-- Contraseña 2 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 2</div>
+    <div class="code">
+      <span class="red">MI</span>
+      <span class="blue">TO</span>
+      <span class="blue">NO</span>
+      <span class="red">SA</span>
+      <span class="red">WO</span>
+      <span class="red">MI</span>
+      <span class="red">KI</span>
+      <span class="blue">NA</span>
+      <span class="blue">A</span>
+      <span class="blue">HI</span>
+    </div>
+  </div>
+
+  <!-- Contraseña 3 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 3</div>
+    <div class="code">
+      <span class="red">RA</span>
+      <span class="blue">NO</span>
+      <span class="blue">YO</span>
+      <span class="red">NU</span>
+      <span class="blue">HO</span>
+      <span class="blue">MO</span>
+      <span class="blue">FU</span>
+      <span class="blue">E</span>
+      <span class="red">N</span>
+      <span class="blue">SE</span>
+    </div>
+  </div>
+
+  <!-- Contraseña 4 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 4</div>
+    <div class="code">
+      <span class="red">ME</span>
+      <span class="blue">TO</span>
+      <span class="red">YA</span>
+      <span class="red">KI</span>
+      <span class="blue">U</span>
+      <span class="red">RA</span>
+      <span class="blue">SE</span>
+      <span class="red">SA</span>
+      <span class="blue">WA</span>
+      <span class="blue">MA</span>
+    </div>
+  </div>
+
+  <!-- Contraseña 5 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 5</div>
+    <div class="code">
+      <span class="red">NU</span>
+      <span class="red">KE</span>
+      <span class="blue">SHI</span>
+      <span class="red">KI</span>
+      <span class="red">ME</span>
+      <span class="blue">A</span>
+      <span class="blue">WA</span>
+      <span class="red">CHI</span>
+      <span class="blue">SHI</span>
+      <span class="red">U</span>
+    </div>
+  </div>
+
+  <!-- Contraseña 6 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 6</div>
+    <div class="code">
+      <span class="blue">MU</span>
+      <span class="blue">SHI</span>
+      <span class="blue">NA</span>
+      <span class="blue">SA</span>
+      <span class="blue">KU</span>
+      <span class="blue">KO</span>
+      <span class="blue">FU</span>
+      <span class="blue">U</span>
+      <span class="blue">RE</span>
+      <span class="red">RO</span>
+    </div>
+  </div>
+
+  <!-- Contraseña 7 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 7</div>
+    <div class="code">
+      <span class="blue">N</span>
+      <span class="blue">RU</span>
+      <span class="red">A</span>
+      <span class="blue">TO</span>
+      <span class="blue">NO</span>
+      <span class="blue">TE</span>
+      <span class="blue">TSU</span>
+      <span class="blue">YU</span>
+      <span class="blue">ME</span>
+      <span class="red">CHI</span>
+    </div>
+  </div>
+
+  <div class="pass">
+    <div class="label">CONTRASEÑA 8</div>
+    <div class="code">
+      <span class="red">KE</span>
+      <span class="blue">O</span>
+      <span class="blue">RO</span>
+      <span class="blue">SA</span>
+      <span class="blue">TO</span>
+      <span class="blue">I</span>
+      <span class="blue">KI</span>
+      <span class="blue">N</span>
+      <span class="red">U</span>
+      <span class="blue">U</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="actions">
+  <a href="personajes.html">⬅ Volver</a>
+  <a href="index.html">🏠 Inicio</a>
+</div>
+
+<script>
+window.onload = ()=>{
+  document.body.classList.add("show");
+
+  document.querySelectorAll(".pass").forEach(p=>{
+    p.addEventListener("click", ()=>{
+      p.classList.toggle("used");
+    });
+  });
+};
+
+// Bloquear clic derecho en todas las imágenes
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", e => e.preventDefault());
+});
+
+// Evitar arrastrar imágenes
+document.querySelectorAll("img").forEach(img => {
+  img.setAttribute("draggable", "false");
+});
+</script>
+
+</body>
+</html>

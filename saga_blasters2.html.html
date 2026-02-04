@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blasters 2 - QR Hub</title>
+
+<style>
+
+*{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: url("img/fondo.png") repeat;
+  background-size: 2000px 1500px;
+  animation: fondoScroll 60s linear infinite;
+  opacity:0;
+  transition:.4s;
+}
+
+body.show{
+  opacity:1;
+}
+
+@keyframes fondoScroll{
+  from{ background-position:0 0; }
+  to{ background-position:0 -1200px; }
+}
+
+header{
+  background: linear-gradient(#2b003a,#5a0080);
+  color:white;
+  padding:26px 30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+header h1{
+  margin:0;
+  font-size:26px;
+}
+
+.container{
+  max-width:900px;
+  margin:60px auto;
+  text-align:center;
+}
+
+.bigButton{
+  background: linear-gradient(#fff2a8,#ffd24d);
+  border-radius:60px;
+  padding:30px;
+  margin:25px auto;
+  width:80%;
+  max-width:500px;
+  font-size:36px;
+  font-weight:bold;
+  cursor:pointer;
+  border:4px solid orange;
+  text-decoration:none;
+  color:black;
+  display:block;
+  transition:.2s;
+}
+
+.bigButton:hover{
+  transform:scale(1.05);
+}
+
+.back{
+  display:inline-block;
+  margin:14px auto 20px;
+  padding:14px 26px;
+  background:rgba(255,255,255,.85);
+  border-radius:30px;
+  text-decoration:none;
+  color:black;
+  font-size:18px;
+  transition:.2s;
+}
+
+.back:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+/* Mobile */
+@media(max-width:768px){
+  header{
+    padding:14px 16px;
+  }
+
+  header h1{
+    font-size:20px;
+  }
+
+  .bigButton{
+    width:95%;
+    font-size:24px;
+    padding:22px;
+  }
+
+  .back{
+    font-size:16px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>YO-KAI WATCH BLASTERS 2</h1>
+</header>
+
+<div class="container">
+
+  <a class="bigButton link" href="personajes.html">PERSONAJES</a>
+  <a class="bigButton link" href="objetos.html">OBJETOS</a>
+  <a class="bigButton link" href="monedas.html">MONEDAS</a>
+  <a class="bigButton link" href="canciones.html">CANCIONES</a>
+  <a class="bigButton link" href="contrasenas.html">CONTRASEÑAS</a>
+
+  <a class="back link" href="index.html">⬅ Volver al inicio</a>
+
+</div>
+
+<script>
+window.onload = ()=>{
+  document.body.classList.add("show");
+};
+
+document.querySelectorAll(".link").forEach(link=>{
+  link.addEventListener("click", e=>{
+    e.preventDefault();
+    const url = link.href;
+    document.body.classList.remove("show");
+    setTimeout(()=>{
+      window.location = url;
+    },250);
+  });
+});
+</script>
+
+</body>
+</html>
