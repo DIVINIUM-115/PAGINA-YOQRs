@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="icon" href="../favicon.png" type="image/png">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giverno Enma - QR</title>
+
+<style>
+
+*{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing:border-box;
+}
+
+html, body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#000 url("../img/fondo.png") repeat;
+  background-size:2000px 1500px;
+  background-position:0 0;
+  animation:fondoScroll 60s linear infinite;
+  color:white;
+  text-align:center;
+  -webkit-text-size-adjust:100%;
+  opacity:0;
+  transition:.4s;
+}
+
+body.show{
+  opacity:1;
+}
+
+@keyframes fondoScroll{
+  from{ background-position:0 0; }
+  to{ background-position:0 -1200px; }
+}
+
+/* Header */
+header{
+  padding:28px 20px;
+  font-size:36px;
+  font-weight:bold;
+}
+
+/* Personaje */
+.personaje img{
+  max-width:130px;
+  width:80%;
+  animation: flotar 3s ease-in-out infinite;
+  -webkit-user-drag: none; /* Evitar arrastrar */
+  user-drag: none;
+}
+
+@keyframes flotar{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+/* QRs */
+.qrs{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(180px, 220px));
+  justify-content:center;
+  gap:20px;
+  max-width:900px;
+  margin:30px auto;
+}
+
+.qr{
+  background:white;
+  padding:10px;
+  border-radius:18px;
+  cursor:pointer;
+  transition:.2s;
+  display:flex;           
+  flex-direction:column;  
+  align-items:center;      
+}
+
+.qr span{
+  display:block;
+  font-size:22px; 
+  font-weight:700;
+  letter-spacing:1.2px;
+  color:black;
+  margin-bottom:14px;
+}
+
+.qr img{
+  width:100%;       
+  max-width:180px;     
+  height:auto;      
+  display:block;    
+  border-radius:12px;
+  -webkit-user-drag: none; /* Evitar arrastrar */
+  user-drag: none;
+}
+
+/* Hover */
+.qr:hover{
+  transform:scale(1.06);
+}
+
+/* Used */
+.qr.used{
+  background:#222;
+  transform:scale(.95);
+}
+
+.qr.used img{
+  filter:grayscale(1) brightness(.4);
+  opacity:.6;
+}
+
+/* Botones */
+.actions{
+  margin:40px 0;
+}
+
+.actions a{
+  display:inline-block;
+  margin:12px;
+  padding:14px 26px;
+  background:rgba(255,255,255,.9);
+  border-radius:30px;
+  color:black;
+  font-size:18px;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.actions a:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+/* Mobile */
+@media(max-width:768px){
+  header{
+    font-size:26px;
+  }
+
+  .qr img{
+    width:100%;
+    max-width:150px;  
+  }
+
+  .qr span{
+    font-size:18px;
+    margin-bottom:10px;
+  }
+
+  .actions a{
+    font-size:16px;
+    padding:12px 22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>Mazado de la Calzada</header>
+
+<div class="personaje">
+  <img src="../img/mazado_calzada.png">
+</div>
+
+<div class="qrs">
+  <div class="qr"><span>QR 1</span><img src="../qr/qr_mazada_1.png"></div>
+  <div class="qr"><span>QR 2</span><img src="../qr/qr_mazada_2.png"></div>
+</div>
+
+<div class="actions">
+  <a href="../personajesb2.html">⬅ Volver</a>
+  <a href="../index.html">🏠 Inicio</a>
+</div>
+
+<script>
+window.onload = ()=>{
+  document.body.classList.add("show");
+
+  // Marcar QR como usado al hacer click
+  document.querySelectorAll(".qr").forEach(qr=>{
+    qr.addEventListener("click", ()=>{
+      qr.classList.toggle("used");
+    });
+  });
+};
+
+// Bloquear clic derecho en todas las imágenes
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", e => e.preventDefault());
+});
+</script>
+
+</body>
+</html>
