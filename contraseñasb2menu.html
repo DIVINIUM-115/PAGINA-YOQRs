@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="icon" href="favicon.png" type="image/png">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personajes B2</title>
+
+<style>
+
+*{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: Arial;
+  background: url("img/fondo.png") repeat;
+  background-size:2000px 1500px;
+  animation:fondoScroll 60s linear infinite;
+  color:white;
+  opacity:0;
+  transition:.4s;
+}
+
+body.show{
+  opacity:1;
+}
+
+@keyframes fondoScroll{
+  from{background-position:0 0;}
+  to{background-position:0 -1200px;}
+}
+
+/* HEADER */
+header{
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+}
+
+header img{
+  max-width:110px;
+  width:22%;
+  object-fit:contain;
+  -webkit-user-drag:none;
+  user-drag:none;
+}
+
+header h1{
+  font-size:30px;
+  font-weight:bold;
+}
+
+/* GRID CENTRADO Y RESPONSIVE */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+  gap:30px;
+  padding:30px;
+  justify-content:center;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+/* CARD MÁS GRANDE */
+.card{
+  background:rgba(255,255,255,0.15);
+  border-radius:20px;
+  padding:15px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  transition:.25s;
+  height:270px;
+  width:220px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  backdrop-filter: blur(4px);
+}
+
+.card:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px rgba(255,255,255,.6);
+}
+
+/* IMAGEN MÁS GRANDE */
+.imgBox{
+  height:200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card img{
+  max-width:90%;
+  max-height:190px;
+  object-fit:contain;
+  -webkit-user-drag:none;
+  user-drag:none;
+}
+
+.name{
+  margin-top:8px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+/* BOTÓN VOLVER */
+.back{
+  display:inline-block;
+  margin:40px auto 50px;
+  padding:15px 28px;
+  background:rgba(255,255,255,.9);
+  border-radius:30px;
+  text-decoration:none;
+  color:black;
+  font-size:18px;
+  transition:.2s;
+}
+
+.back:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  header h1{
+    font-size:22px;
+  }
+
+  .grid{
+    gap:20px;
+    padding:20px;
+  }
+
+  .card{
+    height:250px;
+    width:200px;
+  }
+
+  .imgBox{
+    height:170px;
+  }
+
+  .name{
+    font-size:14px;
+  }
+
+  .back{
+    font-size:16px;
+    padding:12px 22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="img/medallas.png" alt="Personajes">
+  <h1>CONTRASEÑAS DISPONIBLES</h1>
+</header>
+
+<div class="grid">
+
+<a class="card link" href="Yo-b2/contraseñasb2u.html">
+  <div class="imgBox">
+    <img src="img/robou.png">
+  </div>
+  <div class="name">Robonyan Definitivo</div>
+</a>
+
+<a class="card link" href="Yo-b2/contraseñasb2icar.html">
+  <div class="imgBox">
+    <img src="img/ica.png">
+  </div>
+  <div class="name">Ícarus</div>
+</a>
+
+</div>
+
+<div style="text-align:center;">
+  <a class="back link" href="saga_blasters2.html">⬅ Volver al inicio</a>
+</div>
+
+<script>
+window.onload = ()=>{
+  document.body.classList.add("show");
+};
+
+// Animación al cambiar de página
+document.querySelectorAll(".link").forEach(link=>{
+  link.addEventListener("click", e=>{
+    e.preventDefault();
+    const url = link.href;
+    document.body.classList.remove("show");
+    setTimeout(()=>{
+      window.location = url;
+    },250);
+  });
+});
+
+// Evitar clic derecho y arrastrar imágenes
+document.querySelectorAll("img").forEach(img=>{
+  img.addEventListener("contextmenu", e=>e.preventDefault());
+  img.setAttribute("draggable","false");
+});
+</script>
+
+</body>
+</html>
