@@ -7,6 +7,7 @@
 <title>Contraseñas B2</title>
 
 <style>
+
 *{
   user-select:none;
   -webkit-user-select:none;
@@ -33,40 +34,45 @@ body{
   transition:.4s;
 }
 
-body.show{ opacity:1; }
+body.show{
+  opacity:1;
+}
 
 @keyframes fondoScroll{
   from{ background-position:0 0; }
   to{ background-position:0 -1200px; }
 }
 
+/* Header */
 header{
   padding:28px 20px;
   font-size:34px;
   font-weight:bold;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 header .header-img{
   width:100px;
   height:100px;
-  object-fit:contain;
-  -webkit-user-drag:none;
-  user-drag:none;
+  object-fit: contain;
+  -webkit-user-drag: none; /* Evitar arrastrar imagen */
+  user-drag: none;
 }
 
+/* Grid */
 .passwords{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
   gap:18px;
-  max-width:1100px;
+  max-width:1000px;
   margin:30px auto;
   padding:0 20px;
 }
 
+/* Card */
 .pass{
   background:white;
   color:black;
@@ -85,27 +91,34 @@ header .header-img{
   opacity:.8;
 }
 
+/* Contraseña estilo Blasters 2 */
 .code{
-  font-size:30px;
+  font-size:36px;
   font-weight:900;
   letter-spacing:2px;
 }
 
-.red{ color:red; }
-.blue{ color:blue; }
+/* Colores por letra */
+.red { color:red; }
+.blue { color:blue; }
 
+/* Hover */
 .pass:hover{
   transform:scale(1.06);
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
+/* Used */
 .pass.used{
   background:#2b2b2b;
   color:white;
   transform:scale(.98);
 }
 
-.actions{ margin:40px 0; }
+/* Buttons */
+.actions{
+  margin:40px 0;
+}
 
 .actions a{
   display:inline-block;
@@ -124,10 +137,26 @@ header .header-img{
   transform:scale(1.05);
 }
 
+/* Mobile */
 @media(max-width:768px){
-  header{ font-size:26px; }
-  .code{ font-size:24px; }
+  header{
+    font-size:26px;
+  }
+
+  .label{
+    font-size:14px;
+  }
+
+  .code{
+    font-size:28px;
+  }
+
+  .actions a{
+    font-size:16px;
+    padding:12px 22px;
+  }
 }
+
 </style>
 </head>
 
@@ -138,49 +167,143 @@ header .header-img{
   P. DE ROBONYAN DEFINITIVO
 </header>
 
-<div class="passwords">
+<div class="passwords" id="passwords">
 
-<!-- 1 -->
-<div class="pass"><div class="label">CONTRASEÑA 1</div><div class="code">
-<span class="blue">MU</span> <span class="blue">SHI</span> <span class="blue">NA</span> <span class="blue">SA</span> <span class="blue">KU</span> <span class="blue">KO</span> <span class="blue">FU</span> <span class="blue">U</span> <span class="blue">RE</span> <span class="red">RO</span>
-</div></div>
+  <!-- Contraseña 1 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 1</div>
+    <div class="code">
+      <span class="blue">I</span>
+      <span class="blue">KI</span>
+      <span class="blue">E</span>
+      <span class="blue">NI</span>
+      <span class="red">WO</span>
+      <span class="blue">ME</span>
+      <span class="red">WO</span>
+      <span class="blue">RA</span>
+      <span class="red">A</span>
+      <span class="red">KO</span>
+    </div>
+  </div>
 
-<!-- 2 -->
-<div class="pass"><div class="label">CONTRASEÑA 2</div><div class="code">
-<span class="red">RA</span> <span class="blue">NO</span> <span class="blue">YO</span> <span class="red">NU</span> <span class="blue">HO</span> <span class="blue">MO</span> <span class="blue">FU</span> <span class="red">E</span> <span class="blue">N</span> <span class="blue">SE</span>
-</div></div>
+  <!-- Contraseña 2 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 2</div>
+    <div class="code">
+      <span class="red">MI</span>
+      <span class="blue">TO</span>
+      <span class="blue">NO</span>
+      <span class="red">SA</span>
+      <span class="red">WO</span>
+      <span class="red">MI</span>
+      <span class="red">KI</span>
+      <span class="blue">NA</span>
+      <span class="blue">A</span>
+      <span class="blue">HI</span>
+    </div>
+  </div>
 
-<!-- 3 -->
-<div class="pass"><div class="label">CONTRASEÑA 3</div><div class="code">
-<span class="blue">N</span> <span class="blue">RU</span> <span class="red">A</span> <span class="blue">TO</span> <span class="blue">NO</span> <span class="blue">TE</span> <span class="blue">TSU</span> <span class="blue">YU</span> <span class="blue">ME</span> <span class="red">CHI</span>
-</div></div>
+  <!-- Contraseña 3 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 3</div>
+    <div class="code">
+      <span class="red">RA</span>
+      <span class="blue">NO</span>
+      <span class="blue">YO</span>
+      <span class="red">NU</span>
+      <span class="blue">HO</span>
+      <span class="blue">MO</span>
+      <span class="blue">FU</span>
+      <span class="blue">E</span>
+      <span class="red">N</span>
+      <span class="blue">SE</span>
+    </div>
+  </div>
 
-<!-- 5 -->
-<div class="pass"><div class="label">CONTRASEÑA 4</div><div class="code">
-<span class="red">NU</span> <span class="red">KE</span> <span class="blue">SHI</span> <span class="red">KI</span> <span class="red">ME</span> <span class="red">A</span> <span class="blue">WA</span> <span class="red">CHI</span> <span class="red">SHI</span> <span class="red">U</span>
-</div></div>
+  <!-- Contraseña 4 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 4</div>
+    <div class="code">
+      <span class="red">ME</span>
+      <span class="blue">TO</span>
+      <span class="red">YA</span>
+      <span class="red">KI</span>
+      <span class="blue">U</span>
+      <span class="red">RA</span>
+      <span class="blue">SE</span>
+      <span class="red">SA</span>
+      <span class="blue">WA</span>
+      <span class="blue">MA</span>
+    </div>
+  </div>
 
-<!-- 7 -->
-<div class="pass"><div class="label">CONTRASEÑA 5</div><div class="code">
-<span class="blue">MI</span> <span class="red">TO</span> <span class="blue">NO</span> <span class="red">SA</span> <span class="red">WO</span> <span class="red">MI</span> <span class="red">KI</span> <span class="blue">NA</span> <span class="blue">A</span> <span class="blue">HI</span>
-</div></div>
+  <!-- Contraseña 5 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 5</div>
+    <div class="code">
+      <span class="red">NU</span>
+      <span class="red">KE</span>
+      <span class="blue">SHI</span>
+      <span class="red">KI</span>
+      <span class="red">ME</span>
+      <span class="blue">A</span>
+      <span class="blue">WA</span>
+      <span class="red">CHI</span>
+      <span class="blue">SHI</span>
+      <span class="red">U</span>
+    </div>
+  </div>
 
-<!-- 8 -->
-<div class="pass"><div class="label">CONTRASEÑA 6</div><div class="code">
-<span class="red">KA</span> <span class="red">NU</span> <span class="red">O</span> <span class="red">NO</span> <span class="blue">WA</span> <span class="red">KA</span> <span class="red">RI</span> <span class="red">I</span> <span class="red">RO</span> <span class="blue">RO</span>
-</div></div>
+  <!-- Contraseña 6 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 6</div>
+    <div class="code">
+      <span class="blue">MU</span>
+      <span class="blue">SHI</span>
+      <span class="blue">NA</span>
+      <span class="blue">SA</span>
+      <span class="blue">KU</span>
+      <span class="blue">KO</span>
+      <span class="blue">FU</span>
+      <span class="blue">U</span>
+      <span class="blue">RE</span>
+      <span class="red">RO</span>
+    </div>
+  </div>
 
-<!-- 13 -->
-<div class="pass"><div class="label">CONTRASEÑA 7</div><div class="code">
-<span class="blue">YA</span> <span class="red">SE</span> <span class="red">MA</span> <span class="blue">I</span> <span class="red">O</span> <span class="red">HA</span> <span class="red">E</span> <span class="blue">SE</span> <span class="blue">RO</span> <span class="red">YA</span>
-</div></div>
+  <!-- Contraseña 7 -->
+  <div class="pass">
+    <div class="label">CONTRASEÑA 7</div>
+    <div class="code">
+      <span class="blue">N</span>
+      <span class="blue">RU</span>
+      <span class="red">A</span>
+      <span class="blue">TO</span>
+      <span class="blue">NO</span>
+      <span class="blue">TE</span>
+      <span class="blue">TSU</span>
+      <span class="blue">YU</span>
+      <span class="blue">ME</span>
+      <span class="red">CHI</span>
+    </div>
+  </div>
 
-<!-- 14 -->
-<div class="pass"><div class="label">CONTRASEÑA 8</div><div class="code">
-<span class="blue">YU</span> <span class="red">SU</span> <span class="red">RI</span> <span class="red">MO</span> <span class="red">N</span> <span class="red">YA</span> <span class="blue">RI</span> <span class="blue">SE</span> <span class="blue">NE</span> <span class="blue">MI</span>
-</div></div>
+  <div class="pass">
+    <div class="label">CONTRASEÑA 8</div>
+    <div class="code">
+      <span class="red">KE</span>
+      <span class="blue">O</span>
+      <span class="blue">RO</span>
+      <span class="blue">SA</span>
+      <span class="blue">TO</span>
+      <span class="blue">I</span>
+      <span class="blue">KI</span>
+      <span class="blue">N</span>
+      <span class="red">U</span>
+      <span class="blue">U</span>
+    </div>
+  </div>
 
-</div>
 </div>
 
 <div class="actions">
@@ -191,12 +314,23 @@ header .header-img{
 <script>
 window.onload = ()=>{
   document.body.classList.add("show");
+
   document.querySelectorAll(".pass").forEach(p=>{
     p.addEventListener("click", ()=>{
       p.classList.toggle("used");
     });
   });
 };
+
+// Bloquear clic derecho en todas las imágenes
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", e => e.preventDefault());
+});
+
+// Evitar arrastrar imágenes
+document.querySelectorAll("img").forEach(img => {
+  img.setAttribute("draggable", "false");
+});
 </script>
 
 </body>
