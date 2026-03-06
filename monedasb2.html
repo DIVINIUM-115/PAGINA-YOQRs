@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="icon" href="favicon.png" type="image/png">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monedas B2</title>
+
+<style>
+
+*{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family: Arial;
+  background: url("img/fondo.png") repeat;
+  background-size:2000px 1500px;
+  animation:fondoScroll 60s linear infinite;
+  color:white;
+  opacity:0;
+  transition:.4s;
+}
+
+body.show{
+  opacity:1;
+}
+
+@keyframes fondoScroll{
+  from{background-position:0 0;}
+  to{background-position:0 -1200px;}
+}
+
+/* Header con imagen + texto */
+header{
+  padding:15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* espacio entre imagen y texto */
+}
+
+header img{
+  max-width:90px;
+  width:20%;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  user-drag: none;
+  /* Imagen estática, sin animación */
+}
+
+header h1{
+  font-size:28px;
+  font-weight:bold;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap:18px;
+  padding:25px;
+}
+
+.card{
+  background:rgba(255,255,255,0.15);
+  border-radius:16px;
+  padding:10px;
+  text-align:center;
+  text-decoration:none;
+  color:white;
+  transition:.2s;
+  height:210px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.card:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 15px rgba(255,255,255,.5);
+}
+
+.imgBox{
+  height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.name{
+  margin-top:6px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* BOTON VOLVER */
+.back{
+  display:inline-block;
+  margin:30px auto 40px;
+  padding:14px 26px;
+  background:rgba(255,255,255,.85);
+  border-radius:30px;
+  text-decoration:none;
+  color:black;
+  font-size:18px;
+  transition:.2s;
+}
+
+.back:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media(max-width:600px){
+  .grid{
+    grid-template-columns: repeat(3, 1fr);
+    gap:12px;
+    padding:15px;
+  }
+
+  .card{
+    height:230px;
+  }
+
+  .name{
+    font-size:13px;
+  }
+
+  .back{
+    font-size:16px;
+    padding:12px 22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="img/medallas.png" alt="Personajes">
+  <h1>MONEDAS DISPONIBLES</h1>
+</header>
+
+<div class="grid">
+
+
+<a class="card link" href="Yo-b2/jibadoya.html" style="background:rgba(255,165,0,0.35);">
+  <div class="imgBox"><img src="img/jibadoya.png"></div>
+  <div class="name">Jibanyan Doyagari</div>
+</a>
+
+<a class="card link" href="Yo-b2/komadoya.html" style="background:rgba(255,165,0,0.35);">
+  <div class="imgBox"><img src="img/komadoya.png"></div>
+  <div class="name">Komasan Doyagari</div>
+</a>
+
+<a class="card link" href="Yo-b2/wiblehover.html" style="background:rgba(255,165,0,0.35);">
+  <div class="imgBox"><img src="img/wiblehover.png"></div>
+  <div class="name">Wibblehover</div>
+</a>
+
+<a class="card link" href="Yo-b2/wiblejiro.html" style="background:rgba(255,165,0,0.35);">
+  <div class="imgBox"><img src="img/wiblejiro.png"></div>
+  <div class="name">Wibblejiro</div>
+</a>
+
+
+<a class="card link" href="Yo-b2/sushiyan.html" style="background:rgba(120,255,160,0.35);">
+  <div class="imgBox"><img src="img/jibash.png"></div>
+  <div class="name">Sushinyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/tempurasan.html" style="background:rgba(120,255,160,0.35);">
+  <div class="imgBox"><img src="img/kosamtep.png"></div>
+  <div class="name">Tempurasan</div>
+</a>
+
+<a class="card link" href="Yo-b2/tofupyion.html" style="background:rgba(120,255,160,0.35);">
+  <div class="imgBox"><img src="img/tofupy.png"></div>
+  <div class="name">Tofupyon</div>
+</a>
+
+<a class="card link" href="Yo-b2/jibaniB.html" style="background:rgba(120,255,160,0.35);">
+  <div class="imgBox"><img src="img/jibab.png"></div>
+  <div class="name">Jibanyan B</div>
+</a>
+
+<a class="card link" href="Yo-b2/komab.html" style="background:rgba(120,255,160,0.35);">
+  <div class="imgBox"><img src="img/komab.png"></div>
+  <div class="name">Komasan B</div>
+</a>
+
+<a class="card link" href="Yo-b2/usapib.html" style="background:rgba(120,255,160,0.35);">
+  <div class="imgBox"><img src="img/usapb.png"></div>
+  <div class="name">Usapyon B</div>
+</a>
+
+<a class="card link" href="Yo-b2/usapit.html" style="background:rgba(120,255,160,0.35);">
+  <div class="imgBox"><img src="img/usapt.png"></div>
+  <div class="name">Usapyon T</div>
+</a>
+
+<a class="card link" href="Yo-b2/armoreraza.html">
+  <div class="imgBox"><img src="img/armoreraza.png"></div>
+  <div class="name">Defentia</div>
+</a>
+
+<a class="card link" href="Yo-b2/fenixtelecto.html">
+  <div class="imgBox"><img src="img/fenixtelecto.png"></div>
+  <div class="name">Fénixtelecto</div>
+</a>
+
+<a class="card link" href="Yo-b2/giverno_enma.html" style="background:rgba(180,120,255,0.35);">
+  <div class="imgBox"><img src="img/giverno_enma.png"></div>
+  <div class="name">Enma Dragón</div>
+</a>
+
+<a class="card link" href="Yo-b2/espectro_enma.html" style="background:rgba(180,120,255,0.35);">
+  <div class="imgBox"><img src="img/espectro_enma.png"></div>
+  <div class="name">Enma Imperial</div>
+</a>
+
+<a class="card link" href="Yo-b2/gran_enma_iluminado.html" style="background:rgba(180,120,255,0.35);">
+  <div class="imgBox"><img src="img/gran_enma_iluminado.png"></div>
+  <div class="name">Gran Enma Iluminado</div>
+</a>
+
+<a class="card link" href="Yo-b2/enmanyan.html" style="background:rgba(180,120,255,0.35);">
+  <div class="imgBox"><img src="img/enmanyan.png"></div>
+  <div class="name">Enmanyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/enma_oscuro.html" style="background:rgba(180,120,255,0.35);">
+  <div class="imgBox"><img src="img/enma_oscuro.png"></div>
+  <div class="name">Enma Oscuro</div>
+</a>
+
+<a class="card link" href="Yo-b2/hades_enma.html" style="background:rgba(180,120,255,0.35);">
+  <div class="imgBox"><img src="img/hades_enma.png"></div>
+  <div class="name">Enma Hen</div>
+</a>
+
+<a class="card link" href="Yo-b2/miopatra.html">
+  <div class="imgBox"><img src="img/miopatra.png"></div>
+  <div class="name">Miopatra</div>
+</a>
+
+<a class="card link" href="Yo-b2/mazado_calzada.html">
+  <div class="imgBox"><img src="img/mazado_calzada.png"></div>
+  <div class="name">Mazado de la Calzada</div>
+</a>
+
+<a class="card link" href="Yo-b2/dradorado.html">
+  <div class="imgBox"><img src="img/dradorado.png"></div>
+  <div class="name">Dradorado</div>
+</a>
+
+<a class="card link" href="Yo-b2/narciso_ii.html">
+  <div class="imgBox"><img src="img/narciso_ii.png"></div>
+  <div class="name">Narciso II</div>
+</a>
+
+<a class="card link" href="Yo-b2/zappadoquia.html">
+  <div class="imgBox"><img src="img/zappadoquia.png"></div>
+  <div class="name">Zappadoquia</div>
+</a>
+
+<a class="card link" href="Yo-b2/madame_moai.html">
+  <div class="imgBox"><img src="img/madame_moai.png"></div>
+  <div class="name">Madame Moái</div>
+</a>
+
+
+<a class="card link" href="Yo-b2/jibanyan_t_aureo.html" style="background:rgba(255,210,60,0.35);">
+  <div class="imgBox">
+    <img src="img/jibanyan_t_aureo.png">
+  </div>
+  <div class="name">Jibanyan T Áureo</div>
+</a>
+
+<a class="card link" href="Yo-b2/komasan_t_aureo.html" style="background:rgba(255,210,60,0.35);">
+  <div class="imgBox">
+    <img src="img/komasan_t_aureo.png">
+  </div>
+  <div class="name">Komasan T Áureo</div>
+</a>
+
+<a class="card link" href="Yo-b2/nyanses_ii_aureo.html" style="background:rgba(255,210,60,0.35);">
+  <div class="imgBox">
+    <img src="img/nyanses_ii_aureo.png">
+  </div>
+  <div class="name">Nyansés II Áureo</div>
+</a>
+
+<a class="card link" href="Yo-b2/adoleszombi_aureo.html" style="background:rgba(255,210,60,0.35);">
+  <div class="imgBox">
+    <img src="img/adoleszombi_aureo.png">
+  </div>
+  <div class="name">Adoleszombi Áureo</div>
+</a>
+
+<a class="card link" href="Yo-b2/indiana_jaws_aureo.html" style="background:rgba(255,210,60,0.35);">
+  <div class="imgBox">
+    <img src="img/indiana_jaws_aureo.png">
+  </div>
+  <div class="name">Indiana Jaws Áureo</div>
+</a>
+
+<a class="card link" href="Yo-b2/vulcavador_aureo.html" style="background:rgba(255,210,60,0.35);">
+  <div class="imgBox">
+    <img src="img/vulcavador_aureo.png">
+  </div>
+  <div class="name">Vulcavador Áureo</div>
+</a>
+
+<a class="card link" href="Yo-b2/piedra_rosseta.html">
+  <div class="imgBox"><img src="img/piedra_rosseta.png"></div>
+  <div class="name">Piedra Rosseta</div>
+</a>
+
+<a class="card link" href="Yo-b2/shogunyan_cristalizado.html">
+  <div class="imgBox"><img src="img/shogunyan_cristalizado.png"></div>
+  <div class="name">Shogunyan Cristalizado</div>
+</a>
+
+<a class="card link" href="Yo-b2/gran_acala.html">
+  <div class="imgBox"><img src="img/gran_acala.png"></div>
+  <div class="name">Gran Acala</div>
+</a>
+
+<a class="card link" href="Yo-b2/zircon.html">
+  <div class="imgBox"><img src="img/zircon.png"></div>
+  <div class="name">Zircon</div>
+</a>
+
+<a class="card link" href="Yo-b2/sacoco.html">
+  <div class="imgBox"><img src="img/sacoco.png"></div>
+  <div class="name">Sacoco</div>
+</a>
+
+<a class="card link" href="Yo-b2/gran_coco.html">
+  <div class="imgBox"><img src="img/gran_coco.png"></div>
+  <div class="name">Gran Coco</div>
+</a>
+
+<a class="card link" href="Yo-b2/furtre.html">
+  <div class="imgBox"><img src="img/furtre.png"></div>
+  <div class="name">Furtre</div>
+</a>
+
+<a class="card link" href="Yo-b2/dortre.html">
+  <div class="imgBox"><img src="img/dortre.png"></div>
+  <div class="name">Dortre</div>
+</a>
+
+<a class="card link" href="Yo-b2/tigrenyan.html">
+  <div class="imgBox"><img src="img/tigrenyan.png"></div>
+  <div class="name">Tigrenyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/momonyan.html">
+  <div class="imgBox"><img src="img/momonyan.png"></div>
+  <div class="name">Momonyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/sir_nyancelot.html">
+  <div class="imgBox"><img src="img/sir_nyancelot.png"></div>
+  <div class="name">Sir Nyancelot</div>
+</a>
+
+<a class="card link" href="Yo-b2/shurikenny.html">
+  <div class="imgBox"><img src="img/shurikenny.png"></div>
+  <div class="name">Shurikenny</div>
+</a>
+
+<a class="card link" href="Yo-b2/tomoko.html">
+  <div class="imgBox"><img src="img/tomoko.png"></div>
+  <div class="name">Tomoko</div>
+</a>
+
+<a class="card link" href="Yo-b2/mginyan.html">
+  <div class="imgBox"><img src="img/maginyan.png"></div>
+  <div class="name">Maginyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/coneagente.html">
+  <div class="imgBox"><img src="img/coneagente.png"></div>
+  <div class="name">Coneagente</div>
+</a>
+
+<a class="card link" href="Yo-b2/kintaronyan.html">
+  <div class="imgBox"><img src="img/kintaronyan.png"></div>
+  <div class="name">Kintaronyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/robonyan.html">
+  <div class="imgBox"><img src="img/robonyan.png"></div>
+  <div class="name">Robonyan 2.0</div>
+</a>
+
+<a class="card link" href="Yo-b2/tiburon_tiburcio.html">
+  <div class="imgBox"><img src="img/tiburon_tiburcio.png"></div>
+  <div class="name">Tiburón Tiburcio</div>
+</a>
+
+<a class="card link" href="Yo-b2/capitan_nublo.html">
+  <div class="imgBox"><img src="img/capitan_nublo.png"></div>
+  <div class="name">Capitán Nublo</div>
+</a>
+
+<a class="card link" href="Yo-b2/granizia.html">
+  <div class="imgBox"><img src="img/granizia.png"></div>
+  <div class="name">Granizia</div>
+</a>
+
+<a class="card link" href="Yo-b2/zafinyan.html" style="background:rgba(255,255,255,0.35);">
+  <div class="imgBox"><img src="img/zafinyan.png"></div>
+  <div class="name">Zafinyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/rubinyan.html" style="background:rgba(255,255,255,0.35);">
+  <div class="imgBox"><img src="img/rubinyan.png"></div>
+  <div class="name">Rubinyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/topanyan.html" style="background:rgba(255,255,255,0.35);">
+  <div class="imgBox"><img src="img/topanyan.png"></div>
+  <div class="name">Topanyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/diamanyan.html" style="background:rgba(255,255,255,0.35);">
+  <div class="imgBox"><img src="img/diamanyan.png"></div>
+  <div class="name">Diamanyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/sairlornyan.html">
+  <div class="imgBox"><img src="img/sairlornyan.png"></div>
+  <div class="name">Sairlornyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/felisonte.html">
+  <div class="imgBox"><img src="img/felisonte.png"></div>
+  <div class="name">Felisonte</div>
+</a>
+
+<a class="card link" href="Yo-b2/odisenyan.html">
+  <div class="imgBox"><img src="img/odisenyan.png"></div>
+  <div class="name">Odisenyan</div>
+</a>
+
+<a class="card link" href="Yo-b2/espaya.html">
+  <div class="imgBox"><img src="img/espaya.png"></div>
+  <div class="name">Espayá</div>
+</a>
+
+<a class="card link" href="Yo-b2/fulgurilla.html">
+  <div class="imgBox"><img src="img/fulgurilla.png"></div>
+  <div class="name">Fulgurilla</div>
+</a>
+
+<a class="card link" href="Yo-b2/venoctoscuro.html">
+  <div class="imgBox"><img src="img/venoctoscuro.png"></div>
+  <div class="name">Venoctoscuro</div>
+</a>
+
+<a class="card link" href="Yo-b2/dex_capito.html">
+  <div class="imgBox"><img src="img/dex_capito.png"></div>
+  <div class="name">Dex Cápito</div>
+</a>
+
+</div>
+
+<center>
+  <a class="back link" href="saga_blasters2.html">⬅ Volver al inicio</a>
+</center>
+
+<script>
+window.onload = ()=>{
+  document.body.classList.add("show");
+};
+
+// Animación al cambiar de página
+document.querySelectorAll(".link").forEach(link=>{
+  link.addEventListener("click", e=>{
+    e.preventDefault();
+    const url = link.href;
+    document.body.classList.remove("show");
+    setTimeout(()=>{
+      window.location = url;
+    },250);
+  });
+});
+
+// Evitar clic derecho y arrastrar en todas las imágenes
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", e => e.preventDefault());
+  img.setAttribute("draggable","false");
+});
+</script>
+
+</body>
+</html>
