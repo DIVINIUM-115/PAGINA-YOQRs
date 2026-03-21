@@ -35,19 +35,22 @@ body.show{
   to{background-position:0 -1200px;}
 }
 
-/* Header */
+/* Header con imagen + texto */
 header{
   padding:15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px; /* espacio entre imagen y texto */
 }
 
 header img{
   max-width:90px;
   width:20%;
-  object-fit:contain;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  user-drag: none;
+  /* Imagen estática, sin animación */
 }
 
 header h1{
@@ -58,7 +61,7 @@ header h1{
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns: repeat(9, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap:18px;
   padding:25px;
 }
@@ -89,44 +92,12 @@ header h1{
   justify-content:center;
 }
 
-/* CONTENEDOR DEL SACO */
-.bolsa{
-  position:relative;
-  width:140px;
-  height:140px;
-}
-
-.bolsa img{
-  position:absolute;
-  pointer-events:none;
-}
-
-/* saco base */
-.saco{
-  width:130px;
-  left:5px;
-  top:10px;
-  z-index:1;
-}
-
-/* monedas dentro */
-.monedaDentro{
-  width:32px;
-  z-index:2;
-}
-
-/* monedas del suelo */
-.monedaSuelo{
-  width:32px;
-  z-index:3;
-}
-
-/* borde del saco */
-.frenteSaco{
-  width:130px;
-  left:5px;
-  top:10px;
-  z-index:4;
+.card img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 .name{
@@ -175,6 +146,10 @@ header h1{
     font-size:13px;
   }
 
+  .back{
+    font-size:16px;
+    padding:12px 22px;
+  }
 }
 
 </style>
@@ -183,61 +158,65 @@ header h1{
 <body>
 
 <header>
-  <img src="img/medallas.png">
+  <img src="img/medallas.png" alt="Personajes">
   <h1>MONEDAS DISPONIBLES</h1>
 </header>
 
 <div class="grid">
 
-<a class="card link" href="#">
-
-<div class="imgBox">
-
-<div class="bolsa">
-
-<!-- SACO ATRAS -->
-<img src="img/saco1.png" class="saco">
-
-<!-- MONEDAS DENTRO -->
-
-<img src="img/moneda1.png" class="monedaDentro" style="left:45px; top:21px;">
-<img src="img/moneda2.png" class="monedaDentro" style="left:65px; top:21px;">
-
-
-<!-- MONEDAS SUELO IZQUIERDA -->
-<img src="img/moneda3.png" class="monedaSuelo" style="left:10px; bottom:12px;">
-<img src="img/moneda1.png" class="monedaSuelo" style="left:-5px; bottom:5px;">
-<img src="img/moneda2.png" class="monedaSuelo" style="left:15px; bottom:-2px;">
-
-
-<!-- MONEDAS SUELO DERECHA -->
-<img src="img/moneda2.png" class="monedaSuelo" style="left:55px; bottom:5px;">
-<img src="img/moneda2.png" class="monedaSuelo" style="left:100px; bottom:5px;">
-<img src="img/moneda3.png" class="monedaSuelo" style="left:90px; bottom:-12px;">
-
-<!-- FRENTE SACO -->
-<img src="img/frentesaco.png" class="frenteSaco">
-
-</div>
-
-</div>
-
-<div class="name">Moneda Roja</div>
-
+<a class="card link" href="Yo-b2/monedas/monedaroja.html">
+  <div class="imgBox"><img src="img/monedaroja.png"></div>
+  <div class="name">Monedas Rojas</div>
 </a>
+
+<a class="card link" href="Yo-b2/monedas/monedaamarilla.html">
+  <div class="imgBox"><img src="img/monedas amarillas.png"></div>
+  <div class="name">Monedas Amarillas</div>
+</a>
+
+<a class="card link" href="Yo-b2/monedas/monedanaranja.html">
+  <div class="imgBox"><img src="img/monedanaranja.png"></div>
+  <div class="name">Monedas Naranjas</div>
+</a>
+
+<a class="card link" href="Yo-b2/monedas/monedarosa.html">
+  <div class="imgBox"><img src="img/monedasrosas.png"></div>
+  <div class="name">Monedas Rosas</div>
+</a>
+
+<a class="card link" href="Yo-b2/monedas/monedaverde.html">
+  <div class="imgBox"><img src="img/monedasverdes.png"></div>
+  <div class="name">Monedas Verdes</div>
+</a>
+
+<a class="card link" href="Yo-b2/monedas/monedaazul.html">
+  <div class="imgBox"><img src="img/monedasazules.png"></div>
+  <div class="name">Monedas Azules</div>
+</a>
+
+<a class="card link" href="Yo-b2/monedas/monedamorada.html">
+  <div class="imgBox"><img src="img/monedasmoradas.png"></div>
+  <div class="name">Monedas Moradas</div>
+</a>
+
+<a class="card link" href="Yo-b2/monedas/monedaturquesa.html">
+  <div class="imgBox"><img src="img/monedasturquesa.png"></div>
+  <div class="name">Monedas Turquesa</div>
+</a>
+
 
 </div>
 
 <center>
-  <a class="back link" href="saga_blasters2.html.html">⬅ Volver al inicio</a>
+  <a class="back link" href="saga_blasters2.html">⬅ Volver al inicio</a>
 </center>
 
 <script>
-
 window.onload = ()=>{
   document.body.classList.add("show");
 };
 
+// Animación al cambiar de página
 document.querySelectorAll(".link").forEach(link=>{
   link.addEventListener("click", e=>{
     e.preventDefault();
@@ -249,11 +228,11 @@ document.querySelectorAll(".link").forEach(link=>{
   });
 });
 
-document.querySelectorAll("img").forEach(img=>{
-  img.addEventListener("contextmenu", e=> e.preventDefault());
+// Evitar clic derecho y arrastrar en todas las imágenes
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", e => e.preventDefault());
   img.setAttribute("draggable","false");
 });
-
 </script>
 
 </body>

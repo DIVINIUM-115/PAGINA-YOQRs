@@ -25,11 +25,9 @@ body{
   font-family: Arial, sans-serif;
   background:#000 url("../../img/fondo.png") repeat;
   background-size:2000px 1500px;
-  background-position:0 0;
   animation:fondoScroll 60s linear infinite;
   color:white;
   text-align:center;
-  -webkit-text-size-adjust:100%;
   opacity:0;
   transition:.4s;
 }
@@ -54,7 +52,6 @@ header{
   width:80%;
   animation: flotar 3s ease-in-out infinite;
   -webkit-user-drag: none;
-  user-drag: none;
 }
 
 @keyframes flotar{
@@ -63,6 +60,7 @@ header{
   100%{transform:translateY(0);}
 }
 
+/* GRID */
 .qrs{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(180px, 220px));
@@ -72,36 +70,50 @@ header{
   margin:30px auto;
 }
 
+/* TARJETA */
 .qr{
   background:white;
-  padding:10px;
+  padding:12px;
   border-radius:18px;
   cursor:pointer;
   transition:.2s;
   display:flex;
   flex-direction:column;
   align-items:center;
+  min-height:260px; /* 🔥 evita descuadres */
 }
 
+/* TEXTO */
 .qr span{
-  display:block;
-  font-size:22px;
-  font-weight:700;
-  letter-spacing:1.2px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:10px;
   color:black;
-  margin-bottom:14px;
+  text-align:center;
+  line-height:1.2;
 }
 
+/* QR NUMERO */
+.qr-id{
+  font-size:20px;
+  font-weight:700;
+}
+
+/* NOMBRE */
+.qr-name{
+  font-size:16px;
+  font-weight:600;
+}
+
+/* IMAGEN */
 .qr img{
   width:100%;
   max-width:180px;
-  height:auto;
-  display:block;
   border-radius:12px;
-  -webkit-user-drag: none;
-  user-drag: none;
 }
 
+/* HOVER */
 .qr:hover{
   transform:scale(1.06);
 }
@@ -116,6 +128,7 @@ header{
   opacity:.6;
 }
 
+/* BOTONES */
 .actions{
   margin:40px 0;
 }
@@ -137,19 +150,22 @@ header{
   transform:scale(1.05);
 }
 
+/* MOBILE */
 @media(max-width:768px){
   header{
     font-size:26px;
   }
 
   .qr img{
-    width:100%;
     max-width:150px;
   }
 
-  .qr span{
+  .qr-id{
     font-size:18px;
-    margin-bottom:10px;
+  }
+
+  .qr-name{
+    font-size:14px;
   }
 
   .actions a{
@@ -163,16 +179,38 @@ header{
 
 <body>
 
-<header>Moneda Roja</header>
+<header>Monedas Rojas</header>
 
 <div class="personaje">
-  <img src="../img/sacomonedasrojas.png">
+  <img src="../../img/monedaroja.png">
 </div>
 
 <div class="qrs">
-  <div class="qr"><span>QR 1 MONEDA ROJA</span><img src="../../qr/MONEDA ROJA.png"></div>
-  <div class="qr"><span>QR 2 SUPER MONEDA ROJA</span><img src="../../qr/SUPER MONEDA ROJA.png"></div>
-  <div class="qr"><span>QR 3 ULTRAMONEDA ROJA</span><img src="../../qr/ULTRAMONEDA ROJA.png"></div>
+
+  <div class="qr">
+    <span>
+      <div class="qr-id">QR 1</div>
+      <div class="qr-name">MONEDA ROJA</div>
+    </span>
+    <img src="../../qr/MONEDA ROJA.png">
+  </div>
+
+  <div class="qr">
+    <span>
+      <div class="qr-id">QR 2</div>
+      <div class="qr-name">SUPER MONEDA ROJA</div>
+    </span>
+    <img src="../../qr/SUPER MONEDA ROJA.png">
+  </div>
+
+  <div class="qr">
+    <span>
+      <div class="qr-id">QR 3</div>
+      <div class="qr-name">ULTRAMONEDA ROJA</div>
+    </span>
+    <img src="../../qr/ULTRAMONEDA ROJA.png">
+  </div>
+
 </div>
 
 <div class="actions">
