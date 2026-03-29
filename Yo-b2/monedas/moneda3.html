@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="icon" href="../../favicon.png" type="image/png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monedas B2</title>
+
+<style>
+
+*{
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing:border-box;
+}
+
+html, body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#000 url("../../img/fondo.png") repeat;
+  background-size:2000px 1500px;
+  animation:fondoScroll 60s linear infinite;
+  color:white;
+  text-align:center;
+  opacity:0;
+  transition:.4s;
+}
+
+body.show{
+  opacity:1;
+}
+
+@keyframes fondoScroll{
+  from{ background-position:0 0; }
+  to{ background-position:0 -1200px; }
+}
+
+header{
+  padding:28px 20px;
+  font-size:36px;
+  font-weight:bold;
+}
+
+.personaje img{
+  max-width:200px;
+  width:80%;
+  animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0);}
+}
+
+.qrs{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(180px, 220px));
+  justify-content:center;
+  gap:20px;
+  max-width:900px;
+  margin:30px auto;
+}
+
+.qr{
+  background:white;
+  padding:10px;
+  border-radius:18px;
+  cursor:pointer;
+  transition:.2s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:260px; /* FIX */
+}
+
+/* NUEVO */
+.qr span{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom:10px;
+  color:black;
+  text-align:center;
+  line-height:1.2;
+}
+
+.qr-id{
+  font-size:20px;
+  font-weight:700;
+}
+
+.qr-name{
+  font-size:16px;
+  font-weight:600;
+}
+
+.qr img{
+  width:100%;
+  max-width:180px;
+  border-radius:12px;
+}
+
+.qr:hover{
+  transform:scale(1.06);
+}
+
+.qr.used{
+  background:#222;
+  transform:scale(.95);
+}
+
+.qr.used img{
+  filter:grayscale(1) brightness(.4);
+  opacity:.6;
+}
+
+.actions{
+  margin:40px 0;
+}
+
+.actions a{
+  display:inline-block;
+  margin:12px;
+  padding:14px 26px;
+  background:rgba(255,255,255,.9);
+  border-radius:30px;
+  color:black;
+  font-size:18px;
+  text-decoration:none;
+}
+
+.actions a:hover{
+  background:white;
+  transform:scale(1.05);
+}
+
+@media(max-width:768px){
+  header{
+    font-size:26px;
+  }
+
+  .qr img{
+    max-width:150px;
+  }
+
+  .qr-id{
+    font-size:18px;
+  }
+
+  .qr-name{
+    font-size:14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>Monedas Trotamundos</header>
+
+<div class="personaje">
+  <img src="../../img/mineda1.png">
+</div>
+
+<div class="qrs">
+
+  <div class="qr">
+    <span>
+      <div class="qr-id">QR 1</div>
+      <div class="qr-name">MONEDA TROTAMUNDOS</div>
+    </span>
+    <img src="../../qr/MONEDA TROTAMUNDOS.png">
+  </div>
+
+</div>
+
+<div class="actions">
+  <a href="../../monedasb2.html">⬅ Volver</a>
+  <a href="../../index.html">🏠 Inicio</a>
+</div>
+
+<script>
+window.onload = ()=>{
+  document.body.classList.add("show");
+
+  document.querySelectorAll(".qr").forEach(qr=>{
+    qr.addEventListener("click", ()=>{
+      qr.classList.toggle("used");
+    });
+  });
+};
+
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", e => e.preventDefault());
+});
+</script>
+
+</body>
+</html>
