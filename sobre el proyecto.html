@@ -232,9 +232,13 @@ document.addEventListener("click", function(e){
   }
 });
 
-window.onload = ()=>{
+window.addEventListener("load", () => {
   document.body.classList.add("show");
-};
+});
+
+window.addEventListener("pageshow", () => {
+  document.body.classList.add("show");
+});
 
 document.querySelectorAll("a").forEach(link=>{
   link.addEventListener("click", e=>{
