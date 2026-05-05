@@ -487,6 +487,10 @@ window.onload = ()=>{
   document.body.classList.add("show");
 };
 
+window.addEventListener("pageshow", () => {
+  document.body.classList.add("show");
+});
+
 // Animación al cambiar de página
 document.querySelectorAll(".link").forEach(link=>{
   link.addEventListener("click", e=>{
